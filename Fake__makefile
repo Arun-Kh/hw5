@@ -1,0 +1,37 @@
+CC = g++ -std=c++14 -L/usr/local/Cellar/jsoncpp/1.9.5/lib -ljsoncpp
+
+#CFLAGS = -g
+#CFLAGS = -I/opt/homebrew/Cellar/jsoncpp/1.9.5/include
+#CFLAGS = -I/usr/local/Cellar/jsoncpp/1.9.5/include -L/usr/local/Cellar/jsoncpp/1.9.5/lib -ljsoncpp -I/opt/homebrew/include
+
+#CFLAGS = -g -I/opt/homebrew/include
+#LDFLAGS = -L/opt/homebrew/include -ljsoncpp
+
+
+CFLAGS = -g -I/opt/homebrew/Cellar/jsoncpp/1.9.5/include/ -I/opt/homebrew/Cellar/libjson-rpc-cpp/1.4.1_1/include -I/opt/homebrew/Cellar/libmicrohttpd/0.9.75/include
+
+LDFLAGS =  -L/opt/homebrew/lib/ -ljsoncpp -lmicrohttpd -ljsonrpccpp-common -ljsonrpccpp-server -ljsonrpccpp-client -lcurl
+
+
+
+all: LittleRedRidingHood
+
+INC	=	ecs36b_Common.h
+
+JvTime.o: JvTime.cpp JvTime.h $(INC)
+	$(CC) -c $(CFLAGS) JvTime.cpp $(LDFLAGS) -ljsoncpp
+
+ecs36b_JSON.o: ecs36b_JSON.cpp ecs36b_Common.h $(INC)
+	$(CC) -c $(CFLAGS) ecs36B_JSON.cpp $(LDFLAGS) -ljsoncpp
+
+tet.o: tet.cpp tet.h ecs36b_Common.h $(INC)
+	$(CC) -c $(CFLAGS) tet.cpp $(LDFLAGS) -ljsoncpp
+
+LittleRedRidingHood: tet.o ecs36b_JSON.o JvTime.o $(INC)
+	g++ -std=c++14 tet.o -o LittleRedRidingHood $(LDFLAGS) -ljsoncpp
+
+clean:
+	rm -f *.o *.out
+
+
+

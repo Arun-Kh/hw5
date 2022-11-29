@@ -1,5 +1,5 @@
-#ifndef _PERSON_H_
-#define _PERSON_H_
+#ifndef _THING_H_
+#define _THING_H_
 #include <iostream>
 #include <stdio.h>
 #include <cstdlib>
@@ -12,17 +12,17 @@
 
 using namespace std;
 
-class Person
+class Thing
 {
  public:
+
     string name;
-    int age;
-    string description;
-    Person(string name, int age, string description);
-    Person();
+
+    Thing(string name);
+    Thing();
 
     virtual Json::Value dump2json(); 
-  //  virtual bool JSON2Object (Json::Value);
+   // virtual bool JSON2Object (Json::Value);
 };
 
 

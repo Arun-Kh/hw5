@@ -1,5 +1,5 @@
-#ifndef _PERSON_H_
-#define _PERSON_H_
+#ifndef _PLACE_H_
+#define _PLACE_H_
 #include <iostream>
 #include <stdio.h>
 #include <cstdlib>
@@ -12,17 +12,20 @@
 
 using namespace std;
 
-class Person
+class Place
 {
  public:
-    string name;
-    int age;
-    string description;
-    Person(string name, int age, string description);
-    Person();
 
+    string name;
+    double longitude;
+    double latitude;
+
+    Place(string name, double longitidue, double latitude);
+    Place();
+
+    double distanceToOtherPlace(Place secondPlace);
     virtual Json::Value dump2json(); 
-  //  virtual bool JSON2Object (Json::Value);
+    bool Place::JSON2Object(Json::Value);
 };
 
 

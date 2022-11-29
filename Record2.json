@@ -1,0 +1,18 @@
+{
+	"Person" : 
+	{
+		"age" : 8,
+		"description" : "dear little girl",
+		"name" : "Little Red Riding Hood"
+	},
+	"Place" : 
+	{
+		"latitude" : 34.5,
+		"longitude" : 34.299999999999997,
+		"name" : "woods"
+	},
+	"Thing" : 
+	{
+		"name" : "red hat"
+	}
+}
