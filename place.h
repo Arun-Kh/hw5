@@ -25,7 +25,7 @@ class Place
 
     double distanceToOtherPlace(Place secondPlace);
     virtual Json::Value dump2json(); 
-    bool Place::JSON2Object(Json::Value);
+    virtual bool JSON2Object(Json::Value);
 };
 
 

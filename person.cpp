@@ -30,3 +30,22 @@ Person::dump2json
   return n;
 }
 
+bool
+Person::JSON2Object(Json::Value n){
+  if(n["name"].isNull() || !(n["name"].isString())){
+    return false;
+  }
+  if(n["age"].isNull() || !(n["age"].isInt())){
+    return false;
+
+  }
+  if(n["description"].isNull() || !(n["description"].isDouble())){
+    return false;
+  }
+
+  this->name = (n["name"]).asString();
+  this->age = n["age"].asInt();
+  this->description = (n["description"].asString());
+
+  return true;
+}

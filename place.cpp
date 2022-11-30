@@ -30,6 +30,22 @@ Place::dump2json
   return n;
 }
 
-bool Place::JSON2Object(Json::Value){
-  
+bool 
+Place::JSON2Object(Json::Value n){
+  if(n["name"].isNull() || !(n["name"].isString())){
+    return false;
+  }
+  if(n["latitude"].isNull() || !(n["latitude"].isDouble())){
+    return false;
+
+  }
+  if(n["longitude"].isNull() || !(n["longitude"].isDouble())){
+    return false;
+  }
+
+  this->name = (n["name"]).asString();
+  this->latitude = n["latitude"].asDouble();
+  this->longitude = n["longitude"].asDouble();
+
+  return true;
 }

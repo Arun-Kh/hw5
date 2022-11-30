@@ -22,7 +22,7 @@ class Person
     Person();
 
     virtual Json::Value dump2json(); 
-  //  virtual bool JSON2Object (Json::Value);
+    virtual bool JSON2Object (Json::Value);
 };
 
 

@@ -22,3 +22,15 @@ Thing::dump2json
     }
   return n;
 }
+
+bool
+Thing::JSON2Object(Json::Value n){
+  
+  if(n["name"].isNull() || !(n["name"].isString())){
+    return false;
+  }
+  
+  this->name = (n["name"]).asString();
+
+  return true;
+}

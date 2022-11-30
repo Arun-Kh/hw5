@@ -16,13 +16,14 @@ class Thing
 {
  public:
 
-    string name;
+   string name;
 
-    Thing(string name);
-    Thing();
+   Thing(string name);
+   Thing();
 
-    virtual Json::Value dump2json(); 
-   // virtual bool JSON2Object (Json::Value);
+   virtual Json::Value dump2json(); 
+   virtual bool JSON2Object (Json::Value);
+   virtual bool JSON2Object(Json::Value);
 };
 
 

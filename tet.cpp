@@ -102,8 +102,9 @@ int main(){
     //r1 r_record(LittleRed, Woods, hat);
 
     r_record r1(LittleRed, Woods, hat);
-    r_record r2(Grandma, Village, cake);
+    r_record r2(Mother, Village, cake);
     r_record r3(Wolf, Woods, wine);
+    r_record r4(Grandma, Woods, wine);
 
     Json::Value r1Jv = r1.dump2Json();
     myJSON2File("Record1.json", &r1Jv);
@@ -114,11 +115,12 @@ int main(){
     Json::Value r3Jv = r3.dump2Json();
     myJSON2File("Record3.json", &r3Jv);
 
-    // Json::Value r4Jv = r4.dump2Json();
-    // myJSON2File("Record4.json", &r4Jv);
+    Json::Value r4Jv = r4.dump2Json();
+    myJSON2File("Record4.json", &r4Jv);
+
+    //Creating new objects ////////////////////////////////////////////////////
 
     
-
 
 
 }
